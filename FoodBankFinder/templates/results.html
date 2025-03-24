@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}FoodBank Finder: RESULTS{% endblock %}
+{% block content %}
+<nav class="navbar bg-body-tertiary bg-white">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <a href="/" class="navbar-brand ">FoodBank Finder <span class="material-symbols-outlined ml-2">
+                travel_explore
+            </span></a>
+        <a href="https://www.canadahelps.org/en/donate-to-food-bank-charities-in-canada/" target="_blank"><button
+                class="btn btn-outline-primary"
+                href="https://www.canadahelps.org/en/donate-to-food-bank-charities-in-canada/">❤️ Donate
+                Today</button></a>
+    </div>
+</nav>
+
+<a href="/" class="ml-2 mt-2"> <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white"
+        class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+            d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z" />
+        <path fill-rule="evenodd"
+            d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
+    </svg></a>
+
+<div>
+    <div class="container vh-100 d-flex-column justify-content-evenly align-items-center bg-primary" id="cards">
+        <div class="row m-5">
+            <div class="col-6 d-flex justify-content-center">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Top Rated Bank</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ highest.name }}</h6>
+                        <a class="card-text" href="http://maps.google.com/?q={{ highest.address }}"
+                            target="_blank">Address: {{
+                            highest.address }}</a>
+                        <p class="card-text">Rating: {{ highest.rating }}</p>
+                        <p class="card-text">Distance[KM]: {{ highest.distance }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 d-flex justify-content-center">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Closest Bank</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ closest.name }}</h6>
+                        <a class="card-text" href="http://maps.google.com/?q={{ closest.address }}"
+                            target="_blank">Address: {{
+                            closest.address }}</a>
+                        <p class="card-text">Rating: {{ closest.rating }}</p>
+                        <p class="card-text">Distance[KM]: {{ closest.distance }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="table table-hover table-light table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Rating</th>
+                    <th scope="col"> Distance[KM]</thscope>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for bank in banks %}
+                <tr>
+                    <th scope="row">{{ bank.name }}</th>
+                    <td><a class="card-text" href="http://maps.google.com/?q={{ bank.address }}" target="_blank">{{
+                            bank.address }}</a></td>
+                    <td class="text-center">{{ bank.rating }}</td>
+                    <td class="text-center">{{ bank.distance }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

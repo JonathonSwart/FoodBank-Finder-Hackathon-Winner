@@ -1,0 +1,59 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.custom-shape-divider-top-1674348114 {
+  position: absolute;
+  top: 80vh;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  /* transform: rotate(180deg); */
+}
+
+.no-deco {
+  text-decoration: none;
+}
+
+.no-deco:hover {
+  text-decoration: none;
+}
+
+.custom-shape-divider-top-1674348114 svg {
+  position: relative;
+  display: block;
+  width: calc(152% + 1.3px);
+  height: 199px;
+}
+
+.custom-shape-divider-top-1674348114 .shape-fill {
+  fill: #017BFE;
+}
+
+.vh-92 {
+  height: 92vh;
+}
+
+.up-btn:nth-of-type(1) {
+  margin-right: 2rem;
+}
+
+.up-btn {
+  text-decoration: none;
+  color: #FFF;
+  transition: color 200ms ease-in-out;
+}
+
+.up-btn:hover {
+  text-decoration: none;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 20
+}

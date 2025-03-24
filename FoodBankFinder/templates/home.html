@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}FoodBank Finder{% endblock %}
+{% block content %}
+<nav class="navbar bg-body-tertiary bg-white">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <a href="/" class="navbar-brand ">FoodBank Finder <span class="material-symbols-outlined ml-2">
+                travel_explore
+            </span></a>
+        <a href="https://www.canadahelps.org/en/donate-to-food-bank-charities-in-canada/" target="_blank"><button
+                class="btn btn-outline-primary"
+                href="https://www.canadahelps.org/en/donate-to-food-bank-charities-in-canada/">❤️ Donate
+                Today</button></a>
+    </div>
+</nav>
+
+<div class="vw-100 bg-white">
+    <div class="container d-flex align-items-center justify-content-center vh-92">
+        <div class="row">
+            <form action="" method="post" class="needs-validation">
+                <div class="input-group">
+                    <input class="form-control mr-3 rounded" type="text" name="postal_code"
+                        placeholder="Enter Postal Code" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid zip
+                    </div>
+                    <input class="form-control mr-3 rounded" type="text" name="radius"
+                        placeholder="Enter Travel Radius [KM]" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid radius
+                    </div>
+                    <input class="btn btn-outline-primary rounded-pill" type="submit" value="Search">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="container vh-90 d-flex-column justify-content-evenly align-items-center bg-primary" id="cards">
+        <div class="row m-5">
+            <div class="col-6 d-flex justify-content-center">
+                <div class="card border-primary" style="width: 30rem;">
+                    <div class="card-header">
+                        <h2 class="card-title text-center">How To Use</h2>
+                    </div>
+                    <div class="card-body ml-4 mr-4">
+
+                        <p class="card-text">Our team has developed a web app that will be simple for all to use! All
+                            you must do is fill in the fields requesting a postal/zip code and a desired search radius.
+                        </p>
+                        <p class="card-text">
+                            Once you have done this, just click 'Search', then boom! You will be presented with a list
+                            of nearby food banks, highlighting which food bank is closest as well as which is highest
+                            rated to ensure that you have only the best experience possible. We hope you enjoy using our
+                            application!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 d-flex justify-content-center">
+                <div class="card border-primary" style="width: 30rem;">
+                    <div class="card-header d-flex align-items-center justify-content-center">
+                        <h2 class="card-title text-center ">Mission Statement
+                        </h2>
+                    </div>
+                    <div class="card-body ml-4 mr-4">
+                        <p class="card-text">Our web app, FoodBank Finder, is designed to help users locate food banks
+                            in their area. As a result of Canada's rising economy, food banks had recently had to tend
+                            to 1.5 million people in a single month! </p>
+                        <p class="card-text">We believe that no one should go hungry, and our
+                            mission is to make it as easy as possible for people in need to find the resources they
+                            need. We have built a comprehensive system to do just that, using various location based
+                            technologies to present only the most accurate data.</p>
+                        <p class="card-subtitle">Thank you for choosing FoodBankFinder</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <a href="#" class="vw-100 d-flex align-items-center justify-content-center bg-primary"><span
+            class="material-symbols-outlined up-btn">
+            keyboard_arrow_up
+        </span>
+        <div class="up-btn">Back to Top</div><span class="material-symbols-outlined up-btn">
+            keyboard_arrow_up
+        </span>
+    </a>
+
+</div>
+
+<div class="custom-shape-divider-top-1674348114">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            class="shape-fill"></path>
+    </svg>
+</div>
+{% endblock %}
